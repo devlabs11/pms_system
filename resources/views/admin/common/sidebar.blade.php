@@ -30,37 +30,31 @@
 													<span class="path4"></span>
 												</i>
 											</span>
-											<span class="menu-title">ADMIN</span>
+											<span class="menu-title">Master</span>
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
 											<div class="menu-item">
-												<a class="menu-link active" href="/showAdmins">
+												<a class="menu-link active" href="/tax-master-show">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Admins</span>
+													<span class="menu-title">GST</span>
 
 												</a>
+												
 											</div>
 										
-											<div class="menu-item">
-												<a class="menu-link" href="/showPublished">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-													<span class="menu-title">Published</span>
-												</a>
-											</div>
-											<div class="menu-item">
+											
+											<!-- <div class="menu-item">
 												<a class="menu-link" href="/showNotPublished">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Not Published</span>
 												</a>
-											</div>
-											<div class="menu-item">
+											</div> -->
+											<!-- <div class="menu-item">
 												
 											</div>
 
@@ -141,7 +135,7 @@
 									
 								</div>
 							</div>
-							
+							 -->
 						</div>
 
 					</div>
