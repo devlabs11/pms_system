@@ -3,7 +3,7 @@
 
 <html lang="en">
 	<head><base href=""/>
-		<title>Metronic</title>
+		<title>PMS ERP</title>
 
 	
 		<meta charset="utf-8" />

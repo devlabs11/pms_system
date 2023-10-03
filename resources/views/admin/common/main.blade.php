@@ -1,5 +1,4 @@
 
-
 @include('admin.common.header')
 @include('admin.common.sidebar')
 <body>
