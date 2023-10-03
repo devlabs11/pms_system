@@ -13,7 +13,6 @@
 									<span class="path2"></span>
 								</i>
 							</div>
-							
 						</div>
 						
 						<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
@@ -30,52 +29,45 @@
 													<span class="path4"></span>
 												</i>
 											</span>
-											<span class="menu-title">ACL</span>
+											<span class="menu-title">ADMIN</span>
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
 											<div class="menu-item">
-												<a class="menu-link active" href="../../demo1/dist/index.html">
+												<a class="menu-link active" href="/showAdmins">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">ADMINS</span>
+													<span class="menu-title">Admins</span>
 
 												</a>
 											</div>
+										
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/dashboards/ecommerce.html">
+												<a class="menu-link" href="/showPublished">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">USERS</span>
+													<span class="menu-title">Published</span>
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/dashboards/projects.html">
+												<a class="menu-link" href="/showNotPublished">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">PUBLISHED</span>
-												</a>
-											</div>
-											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-													<span class="menu-title">NOT PUBLISHED</span>
+													<span class="menu-title">Not Published</span>
 												</a>
 											</div>
 											<div class="menu-item">
 												
 											</div>
-											
-											
+
 										</div>
 									</div>
 									<div class="menu-item pt-5">
 										<div class="menu-content">
+											
 											<span class="menu-heading fw-bold text-uppercase fs-7">USER SECTION</span>
 										</div>
 									</div>
@@ -93,15 +85,15 @@
 										</span>
 										<div class="menu-sub menu-sub-accordion">
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/pages/user-profile/overview.html">
+												<a class="menu-link" href="/showUsers">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">View</span>
+													<span class="menu-title">Users</span>
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/pages/user-profile/projects.html">
+												<a class="menu-link" href="/edit-user">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -109,7 +101,7 @@
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/pages/user-profile/campaigns.html">
+												<a class="menu-link" href="/published-users">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -117,7 +109,7 @@
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../../demo1/dist/pages/user-profile/campaigns.html">
+												<a class="menu-link" href="/not-published-users">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -128,16 +120,13 @@
 										</div>
 									</div>
 									
-									
-									
-									
 									<div class="menu-item pt-5">
 										<div class="menu-content">
 											<span class="menu-heading fw-bold text-uppercase fs-7">Help</span>
 										</div>
 									</div>
 									<div class="menu-item">
-										<a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="_blank">
+										<a class="menu-link" href="/contactUs" target="_blank">
 											<span class="menu-icon">
 												<i class="ki-duotone ki-rocket fs-2">
 													<span class="path1"></span>

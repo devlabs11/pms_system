@@ -1,21 +1,11 @@
 
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: Metronic
-Product Version: 8.1.8
-Purchase: https://1.envato.market/EA4JP
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
+
 <html lang="en">
-	<!--begin::Head-->
 	<head><base href=""/>
 		<title>Metronic</title>
+
+	
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -35,6 +25,11 @@ License: For each use you must have a valid license purchased only from above li
 		
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>
 	
 	</head>
 	
@@ -4516,7 +4511,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="app-navbar-item ms-1 ms-md-3" id="kt_header_user_menu_toggle">
 									<!--begin::Menu wrapper-->
 									<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-										<img src="assets/media/avatars/300-1.jpg" alt="user" />
+										<img src="assets/media/avatars/blank.png" alt="user" />
 									</div>
 									<!--begin::User account menu-->
 									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -4525,14 +4520,15 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="menu-content d-flex align-items-center px-3">
 												<!--begin::Avatar-->
 												<div class="symbol symbol-50px me-5">
-													<img alt="Logo" src="assets/media/avatars/300-1.jpg" />
+													<img alt="Logo" src="assets/media/avatars/blank.png" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Username-->
 												<div class="d-flex flex-column">
-													<div class="fw-bold d-flex align-items-center fs-5">nishant karale 
+												
+													<div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->name }}
 													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2"></span></div>
-													<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">nishant@gmail.com</a>
+													<a href="#" class="fw-semibold text-muted text-hover-primary fs-7"> {{ Auth::user()->email }}</a>
 												</div>
 												<!--end::Username-->
 											</div>
@@ -4550,9 +4546,7 @@ License: For each use you must have a valid license purchased only from above li
 										<div class="menu-item px-5">
 											<a href="../../demo1/dist/apps/projects/list.html" class="menu-link px-5">
 												<span class="menu-text">ACL</span>
-												<span class="menu-badge">
-													<span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
-												</span>
+												
 											</a>
 										</div>
 										<!--end::Menu item-->
@@ -4575,8 +4569,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="../../demo1/dist/account/statements.html" class="menu-link px-5">Payments</a>
 												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
+												
 												<div class="menu-item px-3">
 													<a href="../../demo1/dist/account/statements.html" class="menu-link d-flex flex-stack px-5">Statements
 													<span class="ms-2" data-bs-toggle="tooltip" title="View your statements">
@@ -4587,87 +4580,42 @@ License: For each use you must have a valid license purchased only from above li
 														</i>
 													</span></a>
 												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu separator-->
 												<div class="separator my-2"></div>
-												<!--end::Menu separator-->
-												<!--begin::Menu item-->
 												<div class="menu-item px-3">
 													
 												</div>
-												<!--end::Menu item-->
 											</div>
-											<!--end::Menu sub-->
 										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
 										
-										<!--end::Menu item-->
-										<!--begin::Menu separator-->
 										<div class="separator my-2"></div>
-										<!--end::Menu separator-->
-										<!--begin::Menu item-->
-										<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
-											<a href="#" class="menu-link px-5">
-												<span class="menu-title position-relative">Language
-												<span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-												<img class="w-15px h-15px rounded-1 ms-2" src="assets/media/flags/united-states.svg" alt="" /></span></span>
-											</a>
-											<!--begin::Menu sub-->
-											<div class="menu-sub menu-sub-dropdown w-175px py-4">
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5 active">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/united-states.svg" alt="" />
-													</span>English</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/spain.svg" alt="" />
-													</span>Spanish</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/germany.svg" alt="" />
-													</span>German</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/japan.svg" alt="" />
-													</span>Japanese</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/settings.html" class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/france.svg" alt="" />
-													</span>French</a>
-												</div>
-												<!--end::Menu item-->
-											</div>
-											<!--end::Menu sub-->
+							
+									<div class="menu-item px-5 my-2">
+									
+									<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>									
+				
 										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
-										<div class="menu-item px-5 my-1">
-											<a href="../../demo1/dist/account/settings.html" class="menu-link px-5">Account Settings</a>
-										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
-										<div class="menu-item px-5">
-											<a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
-										</div>
+
+										
+
+
+										
+
+
+
+
+
+
+
+
+
 										<!--end::Menu item-->
 									</div>
 									<!--end::User account menu-->
