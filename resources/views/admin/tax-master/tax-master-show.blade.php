@@ -142,22 +142,6 @@
                 
                 <!--end::Menu-->
 
-
-
-
-				
-				
-
-
-
-
-
-
-
-
-
-
-
 <div>
 
                     
@@ -238,7 +222,7 @@
                                     <td>{{$data->cgst}}</td>
                                     <td>{{$data->igst}}</td>
                                     <td>
-                                    <a href="/edit-tax-master/{{$data->id}}" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit" style="font-weight:normal !important;"></i></a>
+                                    <a href="/edit-tax-master/{{encrypt($data->id)}}" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit" style="font-weight:normal !important;"></i></a>
                                      <a  onclick="return confirm('Are you sure?')"  href="/delete-tax-master/{{encrypt($data->id)}}" title="Delete" style="cursor: pointer;font-weight:normal !important;" class="menu-link flex-stack px-3"><i class="fa fa-trash" style="color:red;"> </i></a>
                                        </td>
                                    </tr>

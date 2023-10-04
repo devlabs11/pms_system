@@ -37,15 +37,29 @@ class GstController extends Controller
   
     public function editGst($id)
     {
-        $editGst = GstModel::find($id);
+        $editGst = GstModel::find(decrypt($id));
         return view('admin.tax-master.tax-master-edit' , ['editGst'=>$editGst]);
 
     }
 
   
-    public function updateGst(Request $request, string $id)
+    public function updateGst(Request $request,$id)
     {
-        //
+
+        $updateGst = GstModel::find(decrypt($id));
+        $updateGst->sgst = $request->get('sgst');
+        $updateGst->cgst = $request->get('cgst');
+        $updateGst->igst = $request->get('igst');
+        $updateGst->created_by=auth()->id();
+        $updateGst->created_date = now();
+        $updateGst->modify_by = auth()->id();
+        $updateGst->modify_at = now();
+        $updateGst->created_at = now();
+        $updateGst->updated_at = now();
+        $updateGst->save();
+        return redirect('tax-master-show');
+
+        
     }
 
  

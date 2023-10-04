@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="card-body pt-5">
-                            <form method="POST" id="form"  action="/update-tax-master/{{$editGst->id}}">
+                            <form method="POST" id="form"  action="/update-tax-master/{{encrypt($editGst->id)}}">
 
                             @csrf
                                 
