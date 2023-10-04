@@ -32,12 +32,12 @@ Route::get('/tax-master-create' , function(){
 
 Route::post('/tax-master-create', [App\Http\Controllers\GstController::class, 'storeGst'])->name('tax-master-create');
 
-
 Route::get('/tax-master-show', [App\Http\Controllers\GstController::class, 'showGst'])->name('tax-master-show');
 
+Route::get('/edit-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'editGst']);
 
 
-
+Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'destroyGst']);
 
 
 

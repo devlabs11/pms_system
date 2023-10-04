@@ -35,9 +35,11 @@ class GstController extends Controller
     }
 
   
-    public function editGst(string $id)
+    public function editGst($id)
     {
-        //
+        $editGst = GstModel::find($id);
+        return view('admin.tax-master.tax-master-edit' , ['editGst'=>$editGst]);
+
     }
 
   
@@ -47,8 +49,11 @@ class GstController extends Controller
     }
 
  
-    public function destroy(string $id)
+    public function destroyGst($id)
     {
-        //
+        
+        $deleteGst = GstModel::find(decrypt($id));
+        dd($deleteGst);
+      
     }
 }

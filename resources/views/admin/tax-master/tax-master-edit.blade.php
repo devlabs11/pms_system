@@ -1,6 +1,6 @@
 @extends('admin.common.main')
-
 @section('containes')
+
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 										
 									</div>
@@ -12,7 +12,7 @@
 						</div>
 						
 					</div>
-
+					
 
                     <main class="py-4">
                         <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -31,7 +31,10 @@
 
                 <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                 
-            
+               
+
+
+              
                  </div>
              
 
@@ -96,7 +99,8 @@
                         </div>
 
                         <div class="card-body pt-5">
-                            <form method="POST" id="form" action="{{ route('tax-master-create') }}">
+                            <form method="POST" id="form"  action="/update-tax-master/{{$editGst->id}}">
+
                             @csrf
                                 
                                 <div class="row row-cols-1 row-cols-sm-3 rol-cols-md-1 row-cols-lg-3">
@@ -105,7 +109,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">SGST</span>
                                             </label>
-                                            <input type="text" name="sgst" id="sgst" class="form-control form-control-solid">
+                                            <input type="text" name="sgst" id="sgst" class="form-control form-control-solid"  value={{ $editGst->sgst}}>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -113,7 +117,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">CGST</span>
                                             </label>
-                                            <input type="text" name="cgst" id="cgst" class="form-control form-control-solid">
+                                            <input type="text" name="cgst" id="cgst" class="form-control form-control-solid"  value={{ $editGst->cgst}}>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -121,7 +125,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">IGST</span>
                                             </label>
-                                            <input type="text" name="igst" id="igst" class="form-control form-control-solid">
+                                            <input type="text" name="igst" id="igst" class="form-control form-control-solid"  value={{ $editGst->igst}}>
                                         </div>
                                     </div>
 
@@ -129,16 +133,7 @@
                                 <br>
                                 <div style="float:right;">
 
-                        
-
-
-                                <div class="d-flex justify-content-end">
-                                    <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-light me-3">Cancel</button>
-                                    <button type="submit" id="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                        <span class="indicator-label">Save</span>
-                                        
-                                    </button>
-                                </div>
+                                <span><button type="submit" id="submit" class="btn btn-primary">SUBMIT</button> </span>
            
             </div>
                             </form>
