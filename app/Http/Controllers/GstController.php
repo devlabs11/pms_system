@@ -13,6 +13,16 @@ class GstController extends Controller
    
     public function storeGst(Request $request)
     {
+
+
+
+        $validated = $request->validate([
+            'sgst' => 'required',
+            'cgst' => 'required',
+            'igst' => 'required',
+    
+        ]);
+     
         $storeGst = new GstModel();
         $storeGst->sgst = $request->get('sgst');
         $storeGst->cgst = $request->get('cgst');

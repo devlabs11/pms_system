@@ -65,7 +65,7 @@
             <!--begin::Card-->
             <div class="card">
                 <!--begin::Card header-->
-                <div class="card-header border-0 pt-6">
+                <div class="card-header border-2 pt-6">
                     <!--begin::Card title-->
                     <div class="card-title">
                         <!--begin::Search-->
@@ -106,6 +106,8 @@
                                                 <span class="">SGST</span>
                                             </label>
                                             <input type="text" name="sgst" id="sgst" class="form-control form-control-solid">
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter SGST</label>
+                                  
                                         </div>
                                     </div>
                                     <div class="col">
@@ -114,6 +116,7 @@
                                                 <span class="">CGST</span>
                                             </label>
                                             <input type="text" name="cgst" id="cgst" class="form-control form-control-solid">
+                                            <label id="sgst-error" class="error" for="cgst">Please Enter CGST</label>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -122,15 +125,13 @@
                                                 <span class="">IGST</span>
                                             </label>
                                             <input type="text" name="igst" id="igst" class="form-control form-control-solid">
+                                            <label id="sgst-error" class="error" for="igst">Please Enter IGST</label>
                                         </div>
                                     </div>
 
                                 </div>
                                 <br>
                                 <div style="float:right;">
-
-                        
-
 
                                 <div class="d-flex justify-content-end">
                                     <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-light me-3">Cancel</button>
@@ -150,14 +151,68 @@
     </div>
 </div>
 
-                
-                
-                   
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<style>
+
+    #sgst-error{
+        color:red;
+        padding-top:15px;
+        
+    }
+</style>
+
+@endsection
+
+
+
+@section('js')
+<script>
+
+
+$(document).ready(function() {
+     
+  $("#form").validate({
+
+    ignore:'',
+
+            rules: {
+                sgst: {
+                    required: true,
+                    number: true
+                },
+                cgst: {
+                    required: true,
+                    number: true
+                },
+                igst: {
+                    required: true,
+                    number: true
+                },
+            },
+            messages: {
+                sgst: {
+                    required: "Please Enter SGST",
+                    number: "Please Enter Number Only in SGST."
+                },
+                igst: {
+                    required: "Please Enter IGST",
+                    number: "Please Enter Number Only in IGST."
+                },
+                cgst: {
+                    required: "Please Enter CGST.",
+                    number: "Please Enter Number Only in CGST."
+                },
+            },
+        })
+    
+    });
+</script>
 
 @endsection
 
