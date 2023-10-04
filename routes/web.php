@@ -37,7 +37,7 @@ Route::get('/tax-master-show', [App\Http\Controllers\GstController::class, 'show
 Route::get('/edit-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'editGst']);
 
 
-Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'destroyGst']);
+// Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'destroyGst']);
 
 
 

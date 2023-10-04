@@ -1,5 +1,6 @@
 
 		<script>var hostUrl = "assets/";</script>
+		
 		<script src="assets/plugins/global/plugins.bundle.js"></script>
 		<script src="assets/js/scripts.bundle.js"></script>
 		<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
@@ -22,3 +23,6 @@
 		<script src="assets/js/custom/utilities/modals/create-app.js"></script>
 		<script src="assets/js/custom/utilities/modals/new-target.js"></script>
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+
+
+	</body>
