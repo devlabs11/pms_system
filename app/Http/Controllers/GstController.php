@@ -31,28 +31,22 @@ class GstController extends Controller
     public function showGst()
     {
         $showGst =GstModel::all();
-        return view('admin.tax-master.tax-master-show');
+        return view('admin.tax-master.tax-master-show',['showGst'=>$showGst]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+  
     public function editGst(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+  
     public function updateGst(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+ 
     public function destroy(string $id)
     {
         //
