@@ -75,9 +75,8 @@ class GstController extends Controller
  
     public function destroyGst($id)
     {
-        
         $deleteGst = GstModel::find(decrypt($id));
-        
+
         if(!is_null($deleteGst)){
 
             $deleteGst->delete();
@@ -97,10 +96,24 @@ class GstController extends Controller
 
     public function restoreGst($id){
 
-        
+        $restoreTrash = GstModel::withTrashed()->find($id);
 
-
-
-
+        if(!is_null($restoreTrash)){
+        $restoreTrash->restore();
+        }
+        return redirect('tax-master-show');
     }
+
+
+   public function permanentDeleteGst($id){
+
+    $forcedeleteGst = GstModel::withTrashed()->find($id);
+        
+    if(!is_null($forcedeleteGst)){
+
+        $forcedeleteGst->forceDelete();
+    }
+    return redirect('tax-master-show');
+
+   }
 }

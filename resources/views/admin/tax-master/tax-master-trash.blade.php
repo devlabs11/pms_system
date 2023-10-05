@@ -224,9 +224,9 @@
                                     <td>{{$data->cgst}}</td>
                                     <td>{{$data->igst}}</td>
                                     <td>
-                                    <a href="/trash-tax-master-restore/{{encrypt($data->id)}}" class="btn btn-outline-success" role="button" >Restore</a>
-                                    <a href="#" class="btn btn-outline-danger" role="button">Delete</a>
-                                       </td>
+                                    <a href="{{route('trash-tax-master-restore' , ['id'=>$data->id]) }}" class="btn btn-outline-success" role="button" >Restore</a>
+                                    <a href="{{route('trash-tax-master-delete' , ['id'=>$data->id]) }}" class="btn btn-outline-danger" role="button">Delete</a>
+                                    </td>
                                    </tr>
 								   @endforeach
                                               </tbody>
