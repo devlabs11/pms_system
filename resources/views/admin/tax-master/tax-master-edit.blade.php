@@ -110,6 +110,10 @@
                                                 <span class="">SGST</span>
                                             </label>
                                             <input type="text" name="sgst" id="sgst" class="form-control form-control-solid"  value={{ $editGst->sgst}}>
+                                            @if ($errors->has('sgst'))
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter SGST</label>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <div class="col">
@@ -118,6 +122,10 @@
                                                 <span class="">CGST</span>
                                             </label>
                                             <input type="text" name="cgst" id="cgst" class="form-control form-control-solid"  value={{ $editGst->cgst}}>
+                                            @if ($errors->has('cgst'))
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter CGST</label>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <div class="col">
@@ -126,6 +134,9 @@
                                                 <span class="">IGST</span>
                                             </label>
                                             <input type="text" name="igst" id="igst" class="form-control form-control-solid"  value={{ $editGst->igst}}>
+                                            @if ($errors->has('igst'))
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter IGST</label>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -139,6 +150,14 @@
             </div>
                             </form>
                         </div>
+                        <style>
+
+    #sgst-error{
+        color:red;
+        padding-top:15px;
+        
+    }
+</style>
                     </div>
                 </div>
             </div>

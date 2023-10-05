@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Models\GstModel;
 use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class GstController extends Controller
@@ -33,6 +34,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        Session::flash('message', ' Gst Added Successfully'); 
         return redirect('tax-master-show');
     }
 
@@ -59,6 +61,11 @@ class GstController extends Controller
 
     public function updateGst(Request $request, $id)
     {
+        $validated = $request->validate([
+            'sgst' => 'required',
+            'cgst' => 'required',
+            'igst' => 'required',
+        ]);
         try {
             $updateGst = GstModel::find(decrypt($id));
             $updateGst->sgst = $request->get('sgst');
@@ -74,6 +81,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        Session::flash('message', ' Gst Updated Successfully'); 
         return redirect('tax-master-show');
     }
 
@@ -91,6 +99,8 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        Session::flash('message', ' Gst Deleted Successfully'); 
+
         return redirect('tax-master-show');
     }
 
@@ -116,6 +126,8 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        Session::flash('message', ' Gst Restored Successfully'); 
+
         return redirect('tax-master-show');
     }
 
@@ -132,6 +144,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        Session::flash('message', ' Gst Deleted Successfully'); 
         return redirect('tax-master-show');
     }
 }
