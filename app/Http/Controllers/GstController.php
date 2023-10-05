@@ -95,8 +95,12 @@ class GstController extends Controller
 
 
 
-    public function restoreGst(){
+    public function restoreGst($id){
 
         
+
+
+
+
     }
 }

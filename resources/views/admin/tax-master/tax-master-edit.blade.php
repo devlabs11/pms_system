@@ -132,6 +132,7 @@
                                 </div>
                                 <br>
                                 <div style="float:right;">
+                                <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-outline-danger" style="margin-right:10px;">Cancel</button>
 
                                 <span><button type="submit" id="submit" class="btn btn-primary">SUBMIT</button> </span>
            

@@ -144,14 +144,8 @@
 
 <div>
 
+
 <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-outline-danger" style="margin-right:10px;">Cancel</button>
-
-
-
-                    
-				
-                
-
                                         
                  </div>
                  <br>
@@ -230,10 +224,8 @@
                                     <td>{{$data->cgst}}</td>
                                     <td>{{$data->igst}}</td>
                                     <td>
-                                    <a href="{{route('trash-tax-master-restore')}}" class="btn btn-outline-success" role="button" >Restore</a>
+                                    <a href="/trash-tax-master-restore/{{encrypt($data->id)}}" class="btn btn-outline-success" role="button" >Restore</a>
                                     <a href="#" class="btn btn-outline-danger" role="button">Delete</a>
-
-                                  
                                        </td>
                                    </tr>
 								   @endforeach

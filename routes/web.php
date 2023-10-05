@@ -41,7 +41,7 @@ Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::clas
 
 Route::get('/trash-tax-master' , [App\Http\Controllers\GstController::class, 'TrashGst'])->name('trash-tax-master');
 
-Route::get('/trash-tax-master/restore' , [App\Http\Controllers\GstController::class, 'restoreGst'])->name('trash-tax-master-restore');
+Route::get('/trash-tax-master-restore/{id}' , [App\Http\Controllers\GstController::class, 'restoreGst']);
 
 
 
