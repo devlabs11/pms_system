@@ -106,7 +106,13 @@
                                                 <span class="">SGST</span>
                                             </label>
                                             <input type="text" name="sgst" id="sgst" class="form-control form-control-solid">
+
+
+                                            @if ($errors->has('sgst'))
                                             <label id="sgst-error" class="error" for="sgst">Please Enter SGST</label>
+                                            @endif
+
+                                          
                                   
                                         </div>
                                     </div>
@@ -116,7 +122,10 @@
                                                 <span class="">CGST</span>
                                             </label>
                                             <input type="text" name="cgst" id="cgst" class="form-control form-control-solid">
-                                            <label id="sgst-error" class="error" for="cgst">Please Enter CGST</label>
+                                            @if ($errors->has('cgst'))
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter CGST</label>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <div class="col">
@@ -125,7 +134,10 @@
                                                 <span class="">IGST</span>
                                             </label>
                                             <input type="text" name="igst" id="igst" class="form-control form-control-solid">
-                                            <label id="sgst-error" class="error" for="igst">Please Enter IGST</label>
+                                            @if ($errors->has('igst'))
+                                            <label id="sgst-error" class="error" for="sgst">Please Enter IGST</label>
+                                            @endif
+
                                         </div>
                                     </div>
 
@@ -134,7 +146,10 @@
                                 <div style="float:right;">
 
                                 <div class="d-flex justify-content-end">
-                                    <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-light me-3">Cancel</button>
+
+	
+
+                                    <button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-outline-danger" style="margin-right:10px;">Cancel</button>
                                     <button type="submit" id="submit" data-kt-contacts-type="submit" class="btn btn-primary">
                                         <span class="indicator-label">Save</span>
                                         

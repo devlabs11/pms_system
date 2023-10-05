@@ -144,10 +144,12 @@
 
 <div>
 
-                    
-                <a href="{{route('tax-master-create')}}" class="btn btn-outline-success" role="button" >Add GST</a>
+<button type="reset" onclick="history.back()" id="cancel_btn" data-kt-contacts-type="cancel" class="btn btn-outline-danger" style="margin-right:10px;">Cancel</button>
 
-				 <a href="{{route('trash-tax-master')}}" class="btn btn-outline-danger" >Trash</a>
+
+
+                    
+				
                 
 
                                         
@@ -221,15 +223,17 @@
                         </thead>
                         <tbody class="fw-bold text-gray-600">
 
-						@foreach($showGst as $key=>$data)
+						@foreach($TrashGst as $key=>$data)
                                   <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$data->sgst}}</td>
                                     <td>{{$data->cgst}}</td>
                                     <td>{{$data->igst}}</td>
                                     <td>
-                                    <a href="/edit-tax-master/{{encrypt($data->id)}}" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit" style="font-weight:normal !important;"></i></a>
-                                     <a  onclick="return confirm('Are you sure?')"  href="/delete-tax-master/{{encrypt($data->id)}}" title="Delete" style="cursor: pointer;font-weight:normal !important;" class="menu-link flex-stack px-3"><i class="fa fa-trash" style="color:red;"> </i></a>
+                                    <a href="{{route('trash-tax-master-restore')}}" class="btn btn-outline-success" role="button" >Restore</a>
+                                    <a href="#" class="btn btn-outline-danger" role="button">Delete</a>
+
+                                  
                                        </td>
                                    </tr>
 								   @endforeach
