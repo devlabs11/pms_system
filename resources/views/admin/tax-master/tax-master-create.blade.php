@@ -173,6 +173,8 @@
     </style>
 
     <script>
+
+    
     function removeBorderStyle(element) {
         if (element.value.trim() !== '') {
             element.style.border = 'none';

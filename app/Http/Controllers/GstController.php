@@ -34,7 +34,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        Session::flash('message', ' Gst Added Successfully'); 
+        Session::flash('message', ' Gst Added Successfully.!'); 
         return redirect('tax-master-show');
     }
 
