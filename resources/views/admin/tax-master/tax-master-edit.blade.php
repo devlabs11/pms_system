@@ -39,7 +39,7 @@
 
 
                 </div>
-              
+
                 <a style="display:none" href="../../demo1/dist/.html" class="btn btn-sm btn-primary"
                     data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a>
             </div>
@@ -82,7 +82,9 @@
                                                     <span class="">SGST</span>
                                                 </label>
                                                 <input type="text" name="sgst" id="sgst"
-                                                    class="form-control form-control-solid" autocomplete="off"    style="border: 1px solid black; padding: 14px;" value={{ $editGst->sgst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"
+                                                   
+                                                    oninput="removeBorderStyle(this)" value={{ $editGst->sgst}}>
                                                 @if ($errors->has('sgst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     SGST</label>
@@ -96,12 +98,13 @@
                                                     <span class="">CGST</span>
                                                 </label>
                                                 <input type="text" name="cgst" id="cgst"
-                                                    class="form-control form-control-solid" autocomplete="off"   style="border: 1px solid black; padding: 14px;" value={{ $editGst->cgst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"
+                                                   
+                                                    oninput="removeBorderStyle(this)" value={{ $editGst->cgst}}>
                                                 @if ($errors->has('cgst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     CGST</label>
                                                 @endif
-
                                             </div>
                                         </div>
                                         <div class="col">
@@ -110,7 +113,9 @@
                                                     <span class="">IGST</span>
                                                 </label>
                                                 <input type="text" name="igst" id="igst"
-                                                    class="form-control form-control-solid" autocomplete="off"  style="border: 1px solid black; padding: 14px;" value={{ $editGst->igst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"
+                                                  
+                                                    oninput="removeBorderStyle(this)" value={{ $editGst->igst}}>
                                                 @if ($errors->has('igst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     IGST</label>
@@ -138,14 +143,25 @@
 
                             }
                             </style>
+
+                            <script>
+                            function removeBorderStyle(element) {
+                                if (element.value.trim() !== '') {
+                                    element.style.border = 'none';
+                                    element.style.padding = '13px';
+                                } else {
+
+                                    element.style.border = '1px solid black';
+                                    element.style.padding = '13px';
+                                }
+                            }
+                            </script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
 
     </div>

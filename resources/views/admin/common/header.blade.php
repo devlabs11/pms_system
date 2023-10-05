@@ -4551,38 +4551,7 @@
 										<!--begin::Menu item-->
 										<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
 											
-											<!--begin::Menu sub-->
-											<div class="menu-sub menu-sub-dropdown w-175px py-4">
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/referrals.html" class="menu-link px-5">Referrals</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/billing.html" class="menu-link px-5">Billing</a>
-												</div>
-												<!--end::Menu item-->
-												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/statements.html" class="menu-link px-5">Payments</a>
-												</div>
-												
-												<div class="menu-item px-3">
-													<a href="../../demo1/dist/account/statements.html" class="menu-link d-flex flex-stack px-5">Statements
-													<span class="ms-2" data-bs-toggle="tooltip" title="View your statements">
-														<i class="ki-duotone ki-information fs-7">
-															<span class="path1"></span>
-															<span class="path2"></span>
-															<span class="path3"></span>
-														</i>
-													</span></a>
-												</div>
-												<div class="separator my-2"></div>
-												<div class="menu-item px-3">
-													
-												</div>
-											</div>
+											
 										</div>
 										
 										<div class="separator my-2"></div>

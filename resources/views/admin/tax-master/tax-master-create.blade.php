@@ -83,7 +83,8 @@
                                                 </label>
                                                 <input type="text" name="sgst" id="sgst"
                                                     class="form-control form-control-solid" value="{{old('sgst')}}"
-                                                    autocomplete="off"  style="border: 1px solid black; padding: 14px;">
+                                                    autocomplete="off" style="border: 1px solid black; padding: 13px;"
+                                                    oninput="removeBorderStyle(this)">
 
 
                                                 @if ($errors->has('sgst'))
@@ -102,7 +103,8 @@
                                                 </label>
                                                 <input type="text" name="cgst" id="cgst"
                                                     class="form-control form-control-solid" value="{{old('cgst')}}"
-                                                    autocomplete="off"  style="border: 1px solid black; padding: 14px;">
+                                                    autocomplete="off" style="border: 1px solid black; padding: 13px;"
+                                                    oninput="removeBorderStyle(this)">
                                                 @if ($errors->has('cgst'))
                                                 <label id="sgst-error" class="error" for="cgst">Please Enter
                                                     CGST</label>
@@ -117,7 +119,9 @@
                                                 </label>
                                                 <input type="text" name="igst" id="igst"
                                                     class="form-control form-control-solid" aria-required="true"
-                                                    aria-invalid="true" value="{{old('igst')}}" autocomplete="off"  style="border: 1px solid black; padding: 14px;">
+                                                    aria-invalid="true" value="{{old('igst')}}" autocomplete="off"
+                                                    style="border: 1px solid black; padding: 13px;"
+                                                    oninput="removeBorderStyle(this)">
                                                 @if ($errors->has('igst'))
                                                 <label id="sgst-error" class="error" for="igst">Please Enter
                                                     IGST</label>
@@ -166,46 +170,19 @@
         padding-top: 15px;
 
     }
-
     </style>
 
     <script>
-    $(document).ready(function() {
+    function removeBorderStyle(element) {
+        if (element.value.trim() !== '') {
+            element.style.border = 'none';
+            element.style.padding = '13px';
+        } else {
 
-        $("#form").validate({
-
-            ignore: '',
-            rules: {
-                sgst: {
-                    required: true,
-
-                },
-                cgst: {
-                    required: true,
-
-                },
-                igst: {
-                    required: true,
-
-                },
-            },
-            messages: {
-                sgst: {
-                    required: "Please Enter SGST",
-
-                },
-                igst: {
-                    required: "Please Enter IGST",
-
-                },
-                cgst: {
-                    required: "Please Enter CGST.",
-
-                },
-            },
-        })
-
-    });
+            element.style.border = '1px solid black';
+            element.style.padding = '13px';
+        }
+    }
     </script>
 
     @endsection
