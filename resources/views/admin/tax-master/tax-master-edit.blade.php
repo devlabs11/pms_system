@@ -82,7 +82,7 @@
                                                     <span class="">SGST</span>
                                                 </label>
                                                 <input type="text" name="sgst" id="sgst"
-                                                    class="form-control form-control-solid"    style="border: 1px solid black; padding: 14px;" value={{ $editGst->sgst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"    style="border: 1px solid black; padding: 14px;" value={{ $editGst->sgst}}>
                                                 @if ($errors->has('sgst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     SGST</label>
@@ -96,7 +96,7 @@
                                                     <span class="">CGST</span>
                                                 </label>
                                                 <input type="text" name="cgst" id="cgst"
-                                                    class="form-control form-control-solid"  style="border: 1px solid black; padding: 14px;" value={{ $editGst->cgst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"   style="border: 1px solid black; padding: 14px;" value={{ $editGst->cgst}}>
                                                 @if ($errors->has('cgst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     CGST</label>
@@ -110,7 +110,7 @@
                                                     <span class="">IGST</span>
                                                 </label>
                                                 <input type="text" name="igst" id="igst"
-                                                    class="form-control form-control-solid"  style="border: 1px solid black; padding: 14px;" value={{ $editGst->igst}}>
+                                                    class="form-control form-control-solid" autocomplete="off"  style="border: 1px solid black; padding: 14px;" value={{ $editGst->igst}}>
                                                 @if ($errors->has('igst'))
                                                 <label id="sgst-error" class="error" for="sgst">Please Enter
                                                     IGST</label>
