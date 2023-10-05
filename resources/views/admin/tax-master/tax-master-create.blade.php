@@ -105,7 +105,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">SGST</span>
                                             </label>
-                                            <input type="text" name="sgst" id="sgst" class="form-control form-control-solid">
+                                            <input type="text" name="sgst" id="sgst" class="form-control form-control-solid"  autocomplete="off">
 
 
                                             @if ($errors->has('sgst'))
@@ -121,7 +121,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">CGST</span>
                                             </label>
-                                            <input type="text" name="cgst" id="cgst" class="form-control form-control-solid">
+                                            <input type="text" name="cgst" id="cgst" class="form-control form-control-solid"  autocomplete="off">
                                             @if ($errors->has('cgst'))
                                             <label id="sgst-error" class="error" for="sgst">Please Enter CGST</label>
                                             @endif
@@ -133,7 +133,7 @@
                                             <label class="fs-6 fw-bold form-label mt-3">
                                                 <span class="">IGST</span>
                                             </label>
-                                            <input type="text" name="igst" id="igst" class="form-control form-control-solid">
+                                            <input type="text" name="igst" id="igst" class="form-control form-control-solid"  autocomplete="off">
                                             @if ($errors->has('igst'))
                                             <label id="sgst-error" class="error" for="sgst">Please Enter IGST</label>
                                             @endif
