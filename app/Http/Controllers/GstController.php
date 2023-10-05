@@ -81,7 +81,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        Session::flash('message', ' Gst Updated Successfully'); 
+        Session::flash('message', ' Gst Updated Successfully.!'); 
         return redirect('tax-master-show');
     }
 
@@ -99,7 +99,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        Session::flash('message', ' Gst Deleted Successfully'); 
+        Session::flash('message', ' Gst Deleted Successfully.!'); 
 
         return redirect('tax-master-show');
     }
@@ -112,7 +112,6 @@ class GstController extends Controller
             return back()->withError($exception->getMessage())->withInput();
         }
         return view('admin.tax-master.tax-master-trash', ['TrashGst' => $TrashGst]);
-
     }
 
     public function restoreGst($id)
@@ -126,8 +125,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        Session::flash('message', ' Gst Restored Successfully'); 
-
+        Session::flash('message', ' Gst Restored Successfully.!'); 
         return redirect('tax-master-show');
     }
 
@@ -144,7 +142,7 @@ class GstController extends Controller
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        Session::flash('message', ' Gst Deleted Successfully'); 
+        Session::flash('message', ' Gst Deleted Successfully.!'); 
         return redirect('tax-master-show');
     }
 }
