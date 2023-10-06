@@ -43,17 +43,21 @@ class GstController extends Controller
         try {
             if ($request->ajax()) {
                 $showGst = GstModel::latest()->get();
+                
                 return DataTables::of($showGst)
                     ->addIndexColumn()
                     ->addColumn('action', function($row) {
+                        
+
                         $encryptedId = encrypt($row->id);
                         $editUrl = route('edit-tax-master', ['id' => $encryptedId]);
                         $deleteUrl = route('delete-tax-master', ['id' => $row->id]);
-                        $actionBtn = '<a href="' . $editUrl . '" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit" id="ths" style="font-weight:normal !important;"></i></a>
-                            <a  href="' . $deleteUrl . '" title="Delete" style="cursor: pointer;font-weight:normal !important;" class="menu-link flex-stack px-3"><i class="fa fa-trash" style="color:red;"></i></a>';
-                        return $actionBtn;
+                        $actionBtn = '<a href="' . $editUrl . '" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit"  id="ths" style="font-weight:normal !important;"></i></a>
+                            <a href="javascript:void(0)" title="Delete" style="cursor: pointer; font-weight:normal !important;" class="menu-link flex-stack px-3" onclick="confirmDelete(\'' . $deleteUrl . '\')"><i class="fa fa-trash" style="color:red;"></i></a>';
+                            return $actionBtn;
                     })
                     ->rawColumns(['action'])
+                    
                     ->make(true);
             }
         } catch (Exception $exception) {
@@ -116,7 +120,6 @@ class GstController extends Controller
             return back()->withError($exception->getMessage())->withInput();
         }
         Session::flash('message', ' Gst Deleted Successfully.!'); 
-
         return redirect('tax-master-show');
     }
     

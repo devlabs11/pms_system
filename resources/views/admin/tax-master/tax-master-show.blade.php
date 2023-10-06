@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="card-body pt-0">
-                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="tableYajra">
+                        <table class="table align-middle table-row-dashed fs-7 gy-5" id="tableYajra">
                             <thead>
                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                     <th id="th">Id</th>
@@ -158,12 +158,7 @@
         });
         </script>
 
-        <script>
-        $(() => {
-            $('#tableYajra').DataTable();
-        })
-        </script>
-
+      
     </body>
 
     </html>

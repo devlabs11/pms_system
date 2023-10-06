@@ -4,12 +4,10 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 
-    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-   
+<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-   
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
 
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
@@ -21,9 +19,7 @@
         <div class="menu-item px-3">
             <div class="menu-content d-flex align-items-center px-3">
                 <!--begin::Avatar-->
-                <div class="symbol symbol-50px me-5">
-                    <img alt="Logo" src="http://erp-test.devharshinfotech.com/assets/media/avatars/300-1.jpg" />
-                </div>
+
                 <!--end::Avatar-->
                 <!--begin::Username-->
                 <div class="d-flex flex-column">
@@ -151,7 +147,7 @@
                         </div>
                     </div>
                     <div class="card-body pt-0">
-                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="prospect-master">
+                        <table class="table align-middle table-row-dashed fs-7 gy-5" id="prospect-master">
                             <thead>
                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                     <th id="th">Id</th>
@@ -216,10 +212,7 @@ $(document).ready(function() {
     var table = $('#prospect-master').DataTable({
         "searching": true
     });
-    $(".menu-item").click(function() {
-        $(".menu-link").removeClass("active");
-        $('.menu-link').addClass("active");
-    });
+
 });
 </script>
 </body>

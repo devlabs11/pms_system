@@ -34,7 +34,7 @@
     <link href="{{url('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 <style>
     #ths:hover {
-            color:  #00008B;
+            color: #00008B;
         }
 </style>
 
