@@ -83,12 +83,10 @@
                                                 </label>
                                                 <input type="text" name="sgst" id="sgst"
                                                     class="form-control form-control-solid" autocomplete="off"
-                                                   
                                                     oninput="removeBorderStyle(this)" value={{ $editGst->sgst}}>
-                                                @if ($errors->has('sgst'))
-                                                <label id="sgst-error" class="error" for="sgst">Please Enter
-                                                    SGST</label>
-                                                @endif
+                                                @error('sgst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
 
                                             </div>
                                         </div>
@@ -99,12 +97,10 @@
                                                 </label>
                                                 <input type="text" name="cgst" id="cgst"
                                                     class="form-control form-control-solid" autocomplete="off"
-                                                   
                                                     oninput="removeBorderStyle(this)" value={{ $editGst->cgst}}>
-                                                @if ($errors->has('cgst'))
-                                                <label id="sgst-error" class="error" for="sgst">Please Enter
-                                                    CGST</label>
-                                                @endif
+                                                @error('cgst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col">
@@ -114,12 +110,10 @@
                                                 </label>
                                                 <input type="text" name="igst" id="igst"
                                                     class="form-control form-control-solid" autocomplete="off"
-                                                  
                                                     oninput="removeBorderStyle(this)" value={{ $editGst->igst}}>
-                                                @if ($errors->has('igst'))
-                                                <label id="sgst-error" class="error" for="sgst">Please Enter
-                                                    IGST</label>
-                                                @endif
+                                                @error('igst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -140,6 +134,12 @@
                             #sgst-error {
                                 color: red;
                                 padding-top: 15px;
+
+                            }
+
+                            #Errormsg {
+                                color: red;
+                                margin-top: 10px;
 
                             }
                             </style>

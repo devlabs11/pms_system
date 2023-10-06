@@ -85,12 +85,10 @@
                                                     class="form-control form-control-solid" value="{{old('sgst')}}"
                                                     autocomplete="off" style="border: 1px solid black; padding: 13px;"
                                                     oninput="removeBorderStyle(this)">
-
-
-                                                @if ($errors->has('sgst'))
-                                                <label id="sgst-error" class="error" for="sgst">Please Enter
-                                                    SGST</label>
-                                                @endif
+                                          
+                                                @error('sgst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
 
 
 
@@ -105,10 +103,11 @@
                                                     class="form-control form-control-solid" value="{{old('cgst')}}"
                                                     autocomplete="off" style="border: 1px solid black; padding: 13px;"
                                                     oninput="removeBorderStyle(this)">
-                                                @if ($errors->has('cgst'))
-                                                <label id="sgst-error" class="error" for="cgst">Please Enter
-                                                    CGST</label>
-                                                @endif
+
+                                                @error('cgst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
+
 
                                             </div>
                                         </div>
@@ -122,10 +121,10 @@
                                                     aria-invalid="true" value="{{old('igst')}}" autocomplete="off"
                                                     style="border: 1px solid black; padding: 13px;"
                                                     oninput="removeBorderStyle(this)">
-                                                @if ($errors->has('igst'))
-                                                <label id="sgst-error" class="error" for="igst">Please Enter
-                                                    IGST</label>
-                                                @endif
+                                                @error('igst')
+                                                <div id="Errormsg">{{ $message }}</div>
+                                                @enderror
+
 
                                             </div>
                                         </div>
@@ -170,11 +169,15 @@
         padding-top: 15px;
 
     }
+
+    #Errormsg{
+        color:red;
+        margin-top:10px;
+      
+    }
     </style>
 
     <script>
-
-    
     function removeBorderStyle(element) {
         if (element.value.trim() !== '') {
             element.style.border = 'none';

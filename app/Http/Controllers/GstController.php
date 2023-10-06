@@ -62,9 +62,9 @@ class GstController extends Controller
     public function updateGst(Request $request, $id)
     {
         $validated = $request->validate([
-            'sgst' => 'required',
-            'cgst' => 'required',
-            'igst' => 'required',
+            'sgst' => 'required|numeric',
+            'cgst' => 'required|numeric',
+            'igst' => 'required|numeric',
         ]);
         try {
             $updateGst = GstModel::find(decrypt($id));
@@ -88,7 +88,6 @@ class GstController extends Controller
     public function destroyGst($id)
     {
         try {
-
             $userId = auth()->id();
             $deleteGst = GstModel::find(decrypt($id));
 
@@ -103,7 +102,7 @@ class GstController extends Controller
 
         return redirect('tax-master-show');
     }
-
+    
     public function TrashGst()
     {
         try {
@@ -128,7 +127,6 @@ class GstController extends Controller
         Session::flash('message', ' Gst Restored Successfully.!'); 
         return redirect('tax-master-show');
     }
-
 
     public function permanentDeleteGst($id)
     {

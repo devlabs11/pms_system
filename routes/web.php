@@ -2,14 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
-
-
-
 Route::get('/', function () {
     return view('auth.login');
 });
-
-
 Auth::routes();
 
 Route::group(['middleware' => ['auth', 'web']], function() {
@@ -18,7 +13,7 @@ Route::get('/home',function(){
  return view('admin.common.main');
 });
 
-// tax-master (gst)
+//.......................................................tax-master-gst..................................................................//
 Route::get('/tax-master-create' , function(){
 
     return view('admin.tax-master.tax-master-create');
