@@ -23,15 +23,20 @@
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <link href="{{url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet"
         type="text/css" />
     <link href="{{url('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{url('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{url('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-
+<style>
+    #ths:hover {
+            color:  #00008B;
+        }
+</style>
 
 
 </head>
@@ -4950,83 +4955,11 @@
                                                 <div class="row g-2">
                                                     <!--begin::Col-->
                                                     <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/amazon.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">AWS</span>
-                                                        </a>
+
                                                     </div>
                                                     <!--end::Col-->
                                                     <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/angular-icon-1.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">AngularJS</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/atica.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">Atica</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/beats-electronics.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">Music</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/codeigniter.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">Codeigniter</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/bootstrap-4.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">Bootstrap</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/google-tag-manager.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">GTM</span>
-                                                        </a>
-                                                    </div>
-                                                    <!--end::Col-->
-                                                    <!--begin::Col-->
-                                                    <div class="col-4">
-                                                        <a href="#"
-                                                            class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                            <img src="assets/media/svg/brand-logos/disqus.svg"
-                                                                class="w-25px h-25px mb-2" alt="" />
-                                                            <span class="fw-semibold">Disqus</span>
-                                                        </a>
-                                                    </div>
+
                                                     <!--end::Col-->
                                                     <!--begin::Col-->
                                                     <div class="col-4">

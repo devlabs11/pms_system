@@ -8,6 +8,7 @@ use App\Models\GstModel;
 use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Session;
 
+use Yajra\DataTables\DataTables;
 
 class GstController extends Controller
 {
@@ -30,7 +31,6 @@ class GstController extends Controller
             $storeGst->created_at = now();
             $storeGst->updated_at = now();
             $storeGst->save();
-
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
@@ -38,19 +38,36 @@ class GstController extends Controller
         return redirect('tax-master-show');
     }
 
-    public function showGst()
+    public function showGst(Request $request)
     {
         try {
-            $showGst = GstModel::all();
+            if ($request->ajax()) {
+                $showGst = GstModel::latest()->get();
+                return DataTables::of($showGst)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row) {
+                        $encryptedId = encrypt($row->id);
+                        $editUrl = route('edit-tax-master', ['id' => $encryptedId]);
+                        $deleteUrl = route('delete-tax-master', ['id' => $row->id]);
+                        $actionBtn = '<a href="' . $editUrl . '" title="Edit" class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i class="fa fa-edit" id="ths" style="font-weight:normal !important;"></i></a>
+                            <a  href="' . $deleteUrl . '" title="Delete" style="cursor: pointer;font-weight:normal !important;" class="menu-link flex-stack px-3"><i class="fa fa-trash" style="color:red;"></i></a>';
+                        return $actionBtn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+            }
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        return view('admin.tax-master.tax-master-show', ['showGst' => $showGst]);
+    
+        return view('admin.tax-master.tax-master-show');
     }
-
+    
+    
     public function editGst($id)
     {
         try {
+           
             $editGst = GstModel::find(decrypt($id));
         } catch (Exception $exception) {
             return back()->withError($exception->getMessage())->withInput();
@@ -67,7 +84,7 @@ class GstController extends Controller
             'igst' => 'required|numeric',
         ]);
         try {
-            $updateGst = GstModel::find(decrypt($id));
+            $updateGst = GstModel::find($id);
             $updateGst->sgst = $request->get('sgst');
             $updateGst->cgst = $request->get('cgst');
             $updateGst->igst = $request->get('igst');
@@ -89,7 +106,7 @@ class GstController extends Controller
     {
         try {
             $userId = auth()->id();
-            $deleteGst = GstModel::find(decrypt($id));
+            $deleteGst = GstModel::find($id);
 
             if (!is_null($deleteGst)) {
                 $deleteGst::where('id', $deleteGst->id)->update(['deleted_by' => $userId]);

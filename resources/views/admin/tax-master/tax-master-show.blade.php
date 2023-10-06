@@ -1,12 +1,14 @@
 @extends('admin.common.main')
 @section('containes')
-<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 
+<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 </div>
 </div>
 </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <main class="py-4">
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="toolbar" id="kt_toolbar">
@@ -82,9 +84,8 @@
                     </div>
 
                     <div class="card-body pt-0">
-                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="prospect-master">
+                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="tableYajra">
                             <thead>
-
                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                     <th id="th">Id</th>
                                     <th id="th">SGST</th>
@@ -93,25 +94,9 @@
                                     <th id="th">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody class="fw-bold text-gray-600">
-                                @foreach($showGst as $key=>$data)
-                                <tr>
-                                    <td>{{$key+1}}</td>
-                                    <td>{{$data->sgst}}</td>
-                                    <td>{{$data->cgst}}</td>
-                                    <td>{{$data->igst}}</td>
-                                    <td>
-                                        <a href="/edit-tax-master/{{encrypt($data->id)}}" title="Edit"
-                                            class="menu-link flex-stack px-3" style="font-weight:normal !important;"><i
-                                                class="fa fa-edit" style="font-weight:normal !important;"></i></a>
-                                        <a onclick="return confirm('Are you sure , you want to delete this?')"
-                                            href="/delete-tax-master/{{encrypt($data->id)}}" title="Delete"
-                                            style="cursor: pointer;font-weight:normal !important;"
-                                            class="menu-link flex-stack px-3"><i class="fa fa-trash" style="color:red;">
-                                            </i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
+
+                            <tbody>
+
                             </tbody>
                         </table>
                     </div>
@@ -121,38 +106,64 @@
     </div>
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-    <style>
-    #th:hover {
-        color: black;
-    }
-    </style>
-    <script>
-    $(document).ready(function() {
-        console.log("ready!");
-    });
-    </script>
-    <script>
-    $(document).ready(function() {
-        var table = $('#prospect-master').DataTable({
-            "searching": true
+
+    <body>
+        <style>
+        #th:hover {
+            color: #202020;
+        }
+        </style>
+
+        <script>
+        $(document).ready(function() {
+            var table = $('#tableYajra').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('tax-master-show') }}",
+                columns: [{
+                        data: 'id',
+                        name: 'id'
+                    },
+                    {
+                        data: 'sgst',
+                        name: 'sgst'
+                    },
+                    {
+                        data: 'cgst',
+                        name: 'cgst'
+                    },
+                    {
+                        data: 'igst',
+                        name: 'igst'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true,
+
+                    }
+                ],
+                rowCallback: function(row, data, index) {
+                    var api = this.api();
+                    var startIndex = api.page() * api.page.len();
+                    var rowNum = startIndex + index + 1;
+                    $(row).find('td:eq(0)').html(rowNum);
+                }
+            });
+
+            setTimeout(function() {
+                $("div.alert-success").remove();
+            }, 3000);
         });
-        $(".menu-item").click(function() {
-            $(".menu-link").removeClass("active");
-            $('.menu-link').addClass("active");
-        });
-    });
-    </script>
-    <script>
-    $("document").ready(function() {
-        setTimeout(function() {
-            $("div.alert-success").remove();
-        }, 3000);
-    });
-    </script>
+        </script>
+
+        <script>
+        $(() => {
+            $('#tableYajra').DataTable();
+        })
+        </script>
+
     </body>
 
     </html>

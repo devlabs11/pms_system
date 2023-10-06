@@ -1,14 +1,13 @@
 @extends('admin.common.main')
 
 @section('containes')
+
+
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-
-</div>
-
 </div>
 </div>
 </div>
-
+</div>
 
 </div>
 
@@ -85,12 +84,10 @@
                                                     class="form-control form-control-solid" value="{{old('sgst')}}"
                                                     autocomplete="off" style="border: 1px solid black; padding: 13px;"
                                                     oninput="removeBorderStyle(this)">
-                                          
+
                                                 @error('sgst')
                                                 <div id="Errormsg">{{ $message }}</div>
                                                 @enderror
-
-
 
                                             </div>
                                         </div>
@@ -170,10 +167,10 @@
 
     }
 
-    #Errormsg{
-        color:red;
-        margin-top:10px;
-      
+    #Errormsg {
+        color: red;
+        margin-top: 10px;
+
     }
     </style>
 

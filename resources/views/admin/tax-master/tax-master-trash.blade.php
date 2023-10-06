@@ -2,6 +2,15 @@
 @section('containes')
 
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+   
+
+
 
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 
@@ -187,7 +196,7 @@
 </div>
 <style>
 #th:hover {
-    color: black;
+    color: #202020;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

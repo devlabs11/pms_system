@@ -2,12 +2,7 @@
 @section('containes')
 
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-
 </div>
-
-
-
-
 </div>
 </div>
 </div>
@@ -57,8 +52,6 @@
                     </div>
                 </div>
                 <div class="card-body pt-0">
-
-
                     <div class="col-xl-12">
                         <div class="card card-flush h-lg-100" id="kt_contacts_main">
 
@@ -66,12 +59,12 @@
 
                                 <div style="display:none" class="card-title">
 
-                                    <h2>Add GST</h2>
+
                                 </div>
                             </div>
 
                             <div class="card-body pt-5">
-                                <form method="POST" id="form" action="/update-tax-master/{{encrypt($editGst->id)}}">
+                                <form action="/update-tax-master/{{$editGst->id}}" method="post">
 
                                     @csrf
 
@@ -124,7 +117,7 @@
                                             data-kt-contacts-type="cancel" class="btn btn-outline-danger"
                                             style="margin-right:10px;">Cancel</button>
 
-                                        <span><button type="submit" id="submit" class="btn btn-primary">SUBMIT</button>
+                                        <span><button type="submit" id="submit" class="btn btn-primary">Update</button>
                                         </span>
 
                                     </div>
@@ -136,11 +129,9 @@
                                 padding-top: 15px;
 
                             }
-
                             #Errormsg {
                                 color: red;
                                 margin-top: 10px;
-
                             }
                             </style>
 
@@ -162,12 +153,9 @@
             </div>
         </div>
     </div>
-
-
     </div>
     </div>
     </div>
     </div>
     </div>
-
     @endsection

@@ -1,7 +1,6 @@
 <script>
 var hostUrl = "assets/";
 </script>
-
 <script src="{{url('assets/plugins/global/plugins.bundle.js')}}"></script>
 <script src="{{url('assets/js/scripts.bundle.js')}}"></script>
 <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
@@ -17,6 +16,8 @@ var hostUrl = "assets/";
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
 <script src="{{url('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="{{url('assets/js/widgets.bundle.js')}}"></script>
 <script src="{{url('assets/js/custom/widgets.js')}}"></script>
 <script src="{{url('assets/js/custom/apps/chat/chat.js')}}"></script>

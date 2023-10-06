@@ -22,11 +22,12 @@ Route::post('/tax-master-create', [App\Http\Controllers\GstController::class, 's
 
 Route::get('/tax-master-show', [App\Http\Controllers\GstController::class, 'showGst'])->name('tax-master-show');
 
-Route::get('/edit-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'editGst']);
+Route::get('/edit-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'editGst'])->name('edit-tax-master');
 
 Route::post('/update-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'updateGst']);
 
-Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'destroyGst']);
+
+Route::get('/delete-tax-master/{id}' , [App\Http\Controllers\GstController::class, 'destroyGst'])->name('delete-tax-master');
 
 Route::get('/trash-tax-master' , [App\Http\Controllers\GstController::class, 'TrashGst'])->name('trash-tax-master');
 

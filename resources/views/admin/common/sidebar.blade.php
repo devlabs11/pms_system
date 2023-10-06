@@ -4,6 +4,7 @@
         data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
             <a href="../../demo1/dist/index.html">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 
                 <h5 style="display:inline;color:#fff;vertical-align:middel">PMS ERP</h5>
             </a>
