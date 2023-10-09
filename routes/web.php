@@ -34,5 +34,19 @@ Route::get('/trash-tax-master' , [App\Http\Controllers\GstController::class, 'Tr
 Route::get('/trash-tax-master-restore/{id}' , [App\Http\Controllers\GstController::class, 'restoreGst'])->name('trash-tax-master-restore');
 
 Route::get('/trash-tax-master-delete/{id}' , [App\Http\Controllers\GstController::class, 'permanentDeleteGst'])->name('trash-tax-master-delete');
+
+
+// Menus
+
+Route::resource('Menus','App\Http\Controllers\MenuController');
+
+
+Route::post('Menus' , 'App\Http\Controllers\MenuController@store')->name('Menus.store');
+Route::get('menu-list/{id}', 'App\Http\Controllers\MenuController@menuData');
+Route::get('menu-index', 'App\Http\Controllers\MenuController@index');
+Route::post('menu-list/upload','App\Http\Controllers\MenuController@upload');
+Route::get('menu-order/{id}', 'App\Http\Controllers\MenuController@orderData')->name('menu.orderData');
+Route::post('menu-sortable','App\Http\Controllers\MenuController@sortData');
+
 });
 ?>

@@ -39,7 +39,6 @@ class GstController extends Controller
             DB::rollback();
             return back()->withError($exception->getMessage())->withInput();
             
-
         }
         Session::flash('message', ' Gst Added Successfully.!'); 
         return redirect('tax-master-show');
@@ -49,13 +48,11 @@ class GstController extends Controller
     {
         try {
             if ($request->ajax()) {
-                $showGst = GstModel::latest()->get();
+                $showGst = GstModel::select('*');
                 
                 return DataTables::of($showGst)
                     ->addIndexColumn()
                     ->addColumn('action', function($row) {
-                        
-
                         $encryptedId = encrypt($row->id);
                         $editUrl = route('edit-tax-master', ['id' => $encryptedId]);
                         $deleteUrl = route('delete-tax-master', ['id' => $row->id]);
@@ -74,7 +71,6 @@ class GstController extends Controller
     
         return view('admin.tax-master.tax-master-show');
     }
-    
     
     public function editGst($id)
     {
@@ -138,11 +134,9 @@ class GstController extends Controller
     public function TrashGst()
     {
         DB::beginTransaction();
-
         try {
             $TrashGst = GstModel::onlyTrashed()->get();
             DB::commit();
-
         } catch (Exception $exception) {
             DB::rollback();
             return back()->withError($exception->getMessage())->withInput();
@@ -160,7 +154,6 @@ class GstController extends Controller
             if (!is_null($restoreTrash)) {
                 $restoreTrash->restore();
                DB::commit();
-
             }
         } catch (Exception $exception) {
             DB::rollback();

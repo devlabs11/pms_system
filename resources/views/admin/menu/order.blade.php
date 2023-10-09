@@ -6,9 +6,12 @@
 <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-
+<div class="col-lg-12">
+        Note: To move the row, point to the serial number or record. When the pointer becomes a move pointer, drag the
+        row to up or down.
+    </div>
 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-
+   
     <!--begin::User account menu-->
     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
         data-kt-menu="true">
@@ -27,26 +30,15 @@
 
                     </a>
                 </div>
-                <!--end::Username-->
             </div>
         </div>
-        <!--end::Menu item-->
-        <!--begin::Menu separator-->
-
-
     </div>
-
 </div>
 
 </div>
-<!--end::Toolbar wrapper-->
 </div>
-<!--end::Wrapper-->
 </div>
-<!--end::Container-->
 </div>
-<!--end::Header-->
-<!--begin::Content-->
 
 <main class="py-4">
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -112,10 +104,7 @@
                         </div>
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
                             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                                <div>
-                                    <button type="reset" onclick="history.back()" id="cancel_btn"
-                                        class="btn btn-outline-danger" style="margin-right:10px;">Cancel</button>
-                                </div>
+                               
                                 <br>
                             </div>
                             <a style="display:none" href="../../demo1/dist/.html" class="btn btn-sm btn-primary"
@@ -147,28 +136,18 @@
                         <table class="table align-middle table-row-dashed fs-7 gy-5" id="prospect-master">
                             <thead>
                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                    <th id="th">Id</th>
-                                    <th id="th">SGST</th>
-                                    <th id="th">CGST</th>
-                                    <th id="th">IGST</th>
-                                    <th id="th">Actions</th>
+                                    <th>Position</th>
+                                    <th>Title</th>
                                 </tr>
                             </thead>
-                            <tbody class="fw-bold text-gray-600">
+                            <tbody class="fw-bold text-gray-600"  tbody id="sortable">
 
-                                @foreach($TrashGst as $key=>$data)
-                                <tr>
-                                    <td>{{$key+1}}</td>
-                                    <td>{{$data->sgst}}</td>
-                                    <td>{{$data->cgst}}</td>
-                                    <td>{{$data->igst}}</td>
-                                    <td>
-                                        <a href="{{route('trash-tax-master-restore' , ['id'=>$data->id]) }}"
-                                            class="btn btn-outline-success" role="button">Restore</a>
-                                        <a href="{{route('trash-tax-master-delete' , ['id'=>$data->id]) }}"
-                                            class="btn btn-outline-danger" role="button">Delete</a>
-                                    </td>
-                                </tr>
+                                @foreach($cols as $info)
+
+								<tr id="{{ $info->id }}" data-id="{{ $info->id }}" class="ui-state-default">
+                                <td width="15%">{{ $info->position }}</td>
+                                <td width="95%">{{ $info->title }}</td>
+                            </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -197,18 +176,42 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
+<script src="{{ asset('js/jquery.tablednd_0_5.js') }}"></script>
 <script>
-$(document).ready(function() {
-    console.log("ready!");
+$(function() {
+    $(".tbl_repeat tbody").tableDnD({
+        onDrop: function(table, row) {
+            var list = new Array();
+            $('#sortable').find('.ui-state-default').each(function() {
+                var id = $(this).attr('data-id');
+                list.push(id);
+            });
+            console.log(list);
+            var data = JSON.stringify(list);
+            var orders = $.tableDnD.serialize();
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                url: '{{ URL::to('
+                menu - sortable ') }}',
+                data: {
+                    orders: data,
+                    pid: {
+                        {
+                            $parent_id
+                        }
+                    }
+                },
+                datatype: 'json',
+            });
+        }
+    });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 });
 </script>
-
-</body>
-
-
-</html>
-
-
-
 
 @endsection

@@ -7,8 +7,12 @@
 </div>
 </div>
 </div>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
 <main class="py-4">
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="toolbar" id="kt_toolbar">
@@ -95,7 +99,7 @@
                                 </tr>
                             </thead>
 
-                           
+
 
                             <tbody>
 
@@ -115,6 +119,7 @@
             color: #202020;
         }
         </style>
+
 
         <script>
         $(document).ready(function() {
@@ -159,6 +164,16 @@
             }, 3000);
         });
         </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            console.log("ready!");
+        });
+        </script>
+
 
 
     </body>
