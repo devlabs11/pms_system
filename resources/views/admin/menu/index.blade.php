@@ -272,11 +272,11 @@
                     },
                 ]
             });
-            // $.ajaxSetup({
-            //     headers: {
-            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //     }
-            // });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             /* Create new Item */
             $("#add-record").click(function(e) {
@@ -332,8 +332,6 @@
         });
 
         $(document).ready(function() {
-
-
             $('.yajra-datatable').on('click', 'a.edit-record', function(e) {
                 e.preventDefault();
 

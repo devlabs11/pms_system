@@ -47,10 +47,13 @@
 
                             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                                 <div>
+
+                                <a class="btn btn-warning float-end" href="{{ route('gst.export') }}">Export</a>
+
+
                                     <a href="{{route('tax-master-create')}}" class="btn btn-outline-info"
                                         role="button">Add GST</a>
                                     <a href="{{route('trash-tax-master')}}" class="btn btn-outline-danger">Trash</a>
-
                                 </div>
                                 <br>
                             </div>
@@ -86,7 +89,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card-body pt-0">
                         <table class="table align-middle table-row-dashed fs-7 gy-5" id="tableYajra">
                             <thead>
@@ -98,8 +100,6 @@
                                     <th id="th">Actions</th>
                                 </tr>
                             </thead>
-
-
 
                             <tbody>
 

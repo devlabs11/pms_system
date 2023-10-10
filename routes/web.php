@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GstController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
 Route::get('/', function () {
@@ -48,5 +49,12 @@ Route::post('menu-list/upload','App\Http\Controllers\MenuController@upload');
 Route::get('menu-order/{id}', 'App\Http\Controllers\MenuController@orderData')->name('menu.orderData');
 Route::post('menu-sortable','App\Http\Controllers\MenuController@sortData');
 
+});
+
+
+Route::controller(GstController::class)->group(function(){
+    Route::get('gst', 'index');
+    Route::get('gst-export', 'export')->name('gst.export');
+    
 });
 ?>

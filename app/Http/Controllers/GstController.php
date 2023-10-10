@@ -9,7 +9,8 @@ use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\gstExport;
 class GstController extends Controller
 {
     public function storeGst(Request $request)
@@ -183,5 +184,12 @@ class GstController extends Controller
         }
         Session::flash('message', ' Gst Deleted Successfully.!'); 
         return redirect('tax-master-show');
+    }
+
+
+
+    public function export() 
+    {
+        return Excel::download(new gstExport, 'gst.xlsx');
     }
 }
